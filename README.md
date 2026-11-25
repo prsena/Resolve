@@ -49,7 +49,10 @@ Currently in development! I'm building Resolve from scratch, learning along the 
 
 ### Sign In
 
-![Resolve Sign In](docs/screenshots/sign-in.png)
+<div align="center">
+  <img src="docs/screenshots/sign-in.png" width="72%" alt="Desktop sign-in interface" />
+  <img src="docs/screenshots/sign-in-mobile.png" width="22%" alt="Mobile sign-in interface" />
+</div>
 
 ### Overview Dashboard
 
@@ -88,38 +91,6 @@ Currently in development! I'm building Resolve from scratch, learning along the 
 - Dashboard analytics
 - Administrative user management
 - Security audit logging
-
-
-## Architecture
-
-Resolve's planned architecture separates the presentation, application, and data layers.
-
-```mermaid
-flowchart LR
-    A[Client Browser] --> B[React + TypeScript]
-    B --> C[FastAPI REST API]
-    C --> D[(PostgreSQL)]
-```
-
-### User Roles
-
-| Role | Responsibilities |
-|---|---|
-| Employee | Submit support requests and track personal tickets |
-| IT Technician | Investigate, manage, and resolve tickets |
-| Administrator | Manage users, permissions, and system operations |
-
-### Ticket Lifecycle
-
-```mermaid
-flowchart LR
-    A[Open] --> B[Assigned]
-    B --> C[In Progress]
-    C --> D[Resolved]
-    D --> E[Closed]
-```
-
-Backend services, role-based permissions, and ticket workflows are not yet implemented.
 
 ## Getting Started
 
