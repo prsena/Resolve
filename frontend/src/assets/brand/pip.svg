@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 0 80 65">
+  <g shape-rendering="crispEdges">
+    <!-- Monitor outline -->
+    <path d="M43 4 H97 V8 H101 V46 H97 V50 H43 V46 H39 V8 H43Z" fill="#7894B5"/>
+
+    <!-- Monitor body -->
+    <rect x="43" y="8" width="54" height="38" fill="#CEDFF1"/>
+
+    <!-- Screen -->
+    <rect x="48" y="13" width="44" height="27" fill="#F7F9FC"/>
+
+    <!-- Eyes -->
+    <rect x="58" y="21" width="4" height="6" fill="#494451"/>
+    <rect x="78" y="21" width="4" height="6" fill="#494451"/>
+
+    <!-- Smile -->
+    <rect x="64" y="29" width="3" height="3" fill="#7894B5"/>
+    <rect x="67" y="32" width="6" height="3" fill="#7894B5"/>
+    <rect x="73" y="29" width="3" height="3" fill="#7894B5"/>
+
+    <!-- Blush -->
+    <rect x="52" y="30" width="8" height="4" fill="#E8B8C8"/>
+    <rect x="80" y="30" width="8" height="4" fill="#E8B8C8"/>
+
+    <!-- Monitor stand -->
+    <rect x="64" y="50" width="12" height="6" fill="#7894B5"/>
+    <rect x="55" y="56" width="30" height="4" fill="#7894B5"/>
+  </g>
+</svg>
