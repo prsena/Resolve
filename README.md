@@ -16,7 +16,7 @@ A little retro, a little cozy, and a whole lot of problem-solving.
 ![TypeScript](https://img.shields.io/badge/TypeScript-7894B5?style=flat-square&logo=typescript&logoColor=white)
 ![Material UI](https://img.shields.io/badge/Material%20UI-7894B5?style=flat-square&logo=mui&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-7894B5?style=flat-square)
-
+[![Frontend CI](https://img.shields.io/github/actions/workflow/status/prsena/Resolve/frontend-ci.yml?branch=main&style=flat-square&label=Frontend%20CI)](https://github.com/prsena/Resolve/actions/workflows/frontend-ci.yml)
 </div>
 
 ---
@@ -42,8 +42,6 @@ Pip is Resolve's little pixel-art computer mascot, named after Python's package 
 ## Current Status
 
 Currently in development! I'm building Resolve from scratch, learning along the way, and gradually integrating backend services, security features, and cloud infrastructure.
-
----
 
 ## Preview
 
