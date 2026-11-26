@@ -6,7 +6,7 @@ interface RetroWindowProps {
   title: string;
   icon?: ReactNode;
   children: ReactNode;
-  maxWidth?: number;
+  maxWidth?: number | string;
 }
 
 function RetroWindow({
