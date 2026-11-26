@@ -7,7 +7,7 @@
 
 **Your cozy IT workspace.**
 
-A little retro, a little cozy, and a whole lot of problem-solving.
+A little retro and a whole lot of problem-solving.
 
 *Small fixes. Better days. ♡*
 
