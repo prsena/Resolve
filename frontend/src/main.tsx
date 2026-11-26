@@ -3,25 +3,25 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 
-// Brand font
-import '@fontsource/pixelify-sans/400.css';
-import '@fontsource/pixelify-sans/500.css';
-import '@fontsource/pixelify-sans/700.css';
+// Brand font: Pixelify Sans
+import '@fontsource/pixelify-sans/latin-400.css';
+import '@fontsource/pixelify-sans/latin-500.css';
+import '@fontsource/pixelify-sans/latin-700.css';
 
-// Heading font
-import '@fontsource/quicksand/400.css';
-import '@fontsource/quicksand/600.css';
-import '@fontsource/quicksand/700.css';
+// Heading font: Quicksand
+import '@fontsource/quicksand/latin-400.css';
+import '@fontsource/quicksand/latin-600.css';
+import '@fontsource/quicksand/latin-700.css';
 
-// Body font
-import '@fontsource/dm-sans/400.css';
-import '@fontsource/dm-sans/500.css';
-import '@fontsource/dm-sans/600.css';
-import '@fontsource/dm-sans/700.css';
-import '@fontsource/dm-sans/400-italic.css';
+// Body font: DM Sans
+import '@fontsource/dm-sans/latin-400.css';
+import '@fontsource/dm-sans/latin-500.css';
+import '@fontsource/dm-sans/latin-600.css';
+import '@fontsource/dm-sans/latin-700.css';
+import '@fontsource/dm-sans/latin-400-italic.css';
 
-// Technical font
-import '@fontsource/jetbrains-mono/400.css';
+// Technical font: Jetbrains Mono
+import '@fontsource/jetbrains-mono/latin-400.css';
 
 import theme from './theme/theme';
 import App from './App';
