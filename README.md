@@ -21,7 +21,7 @@ A little retro, a little cozy, and a whole lot of problem-solving.
 
 ---
 
-## About
+### About
 
 Resolve is a full-stack IT service desk application in development, designed to streamline internal technical support, incident tracking, and ticket management.
 
@@ -29,21 +29,29 @@ It's designed to help employees submit support requests, IT technicians manage t
 
 I wanted to build something practical while incorporating a little bit of my personality into it. Who says IT support software has to look boring?
 
-## Design
+---
+
+### Design
 
 Resolve's UI follows an original design inspired by retro computers, soft pastels, and cozy games. A little bit of me in every pixel. ♡
 
 The goal is simple: make technical work feel a little more approachable without sacrificing functionality.
 
-## Meet Pip! ♡
+---
+
+### Meet Pip! ♡
 
 Pip is Resolve's little pixel-art computer mascot, named after Python's package installer, `pip`. A little companion for all your troubleshooting adventures.
 
-## Current Status
+---
+
+### Current Status
 
 Currently in development! I'm building Resolve from scratch, learning along the way, and gradually integrating backend services, security features, and cloud infrastructure.
 
-## Preview
+---
+
+### Preview
 
 ### Sign In
 
@@ -52,11 +60,9 @@ Currently in development! I'm building Resolve from scratch, learning along the 
   <img src="docs/screenshots/sign-in-mobile.png" width="22%" alt="Mobile sign-in interface" />
 </div>
 
-### Overview Dashboard
+---
 
-*Coming soon!*
-
-## Tech Stack
+### Tech Stack
 
 | Layer | Technologies | Status |
 |---|---|---|
@@ -68,7 +74,9 @@ Currently in development! I'm building Resolve from scratch, learning along the 
 | Cloud | AWS | Planned |
 | Design | Figma | In progress |
 
-## Features
+---
+
+### Features
 
 ### Implemented
 
