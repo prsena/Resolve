@@ -1,0 +1,89 @@
+name: Issue Labeler
+
+# tells github when to execute workflow
+# runs when:
+#   opened: a new issue is created
+#   editedL an existing issue is modified
+#   reopened: a closed issue is reopened
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  issues: write
+
+jobs:
+  label-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Apply story point and risk labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+
+            // Retrieve the latest issue content.
+            const { data: issue } = await github.rest.issues.get({
+              owner,
+              repo,
+              issue_number
+            });
+
+            const body = issue.body || "";
+
+            // Extract story point estimation.
+            const points = body.match(
+              /^#{1,6}[ \t]+Story Point Estimation[ \t]*\r?\n\s*\*{0,2}(13|8|5|3|2|1)(?=\s|\*|$)/im
+            );
+
+            // Extract risk assessment.
+            const risk = body.match(
+              /^#{1,6}[ \t]+Risk Assessment[ \t]*\r?\n\s*\*{0,2}(low|medium|high)(?=\s|\*|$)/im
+            );
+
+            const currentLabels = issue.labels.map(
+              label => label.name
+            );
+
+            const updates = [
+              {
+                pattern: /^points: (1|2|3|5|8|13)$/i,
+                desired: points ? `points: ${points[1]}` : null
+              },
+              {
+                pattern: /^risk: (low|medium|high)$/i,
+                desired: risk ? `risk: ${risk[1].toLowerCase()}` : null
+              }
+            ];
+
+            for (const update of updates) {
+              // Skip missing or invalid values.
+              if (!update.desired) continue;
+
+              // Apply the correct label.
+              if (!currentLabels.includes(update.desired)) {
+                await github.rest.issues.addLabels({
+                  owner,
+                  repo,
+                  issue_number,
+                  labels: [update.desired]
+                });
+              }
+
+              // Remove outdated labels in the same category.
+              for (const label of currentLabels) {
+                if (
+                  update.pattern.test(label) &&
+                  label !== update.desired
+                ) {
+                  await github.rest.issues.removeLabel({
+                    owner,
+                    repo,
+                    issue_number,
+                    name: label
+                  });
+                }
+              }
+            }
