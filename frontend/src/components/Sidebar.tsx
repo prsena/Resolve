@@ -14,14 +14,24 @@ import {
   AssignmentOutlined,
   PeopleOutlined,
   BarChartOutlined,
-  SettingsOutlined,
 } from '@mui/icons-material';
 
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate, } from 'react-router-dom';
 
 import pip from '../assets/brand/pip.svg';
 import { colors } from '../theme/theme';
+import ProfileMenu from './common/ProfileMenu';
 
+/**
+ * Workspace navigation configuration.
+ *
+ * Currently displays the prototype navigation items.
+ * Role-specific navigation will be introduced alongside
+ * authenticated user context and access control.
+ *
+ * Navigation visibility is not an authorization mechanism.
+ * Protected resources must also enforce server-side permissions.
+ */
 const navigationItems = [
   {
     label: 'Overview',
@@ -48,15 +58,18 @@ const navigationItems = [
     path: '/reports',
     icon: BarChartOutlined,
   },
-  {
-    label: 'Settings',
-    path: '/settings',
-    icon: SettingsOutlined,
-  },
 ];
 
+/**
+ * Shared dashboard sidebar containing brand identity,
+ * workspace navigation, account controls, and system status.
+ *
+ * Uses the centralized theme to maintain consistent styling
+ * across all dashboard layouts.
+ */
 function Sidebar() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <Box
@@ -189,7 +202,20 @@ function Sidebar() {
 
       {/* Footer */}
       <Box sx={{ mt: 'auto', pt: 3 }}>
-        <Divider sx={{ mb: 2 }} />
+        {/* Temporary monk identity for frontend development.
+            Replace with authenticated user data during integration.
+            Sign-out currently performs navigation only and does not
+            invalidate an authenticated session. */}
+        
+        <ProfileMenu
+          name='Jane Doe'
+          role='IT Technician'
+          onProfile={() => navigate('/profile')}
+          onSettings={() => navigate('/settings')}
+          onSignOut={() => navigate('/login', { replace: true})}
+        />
+
+        <Divider sx={{ my: 2 }} />
 
         <Box
           sx={{
@@ -223,7 +249,7 @@ function Sidebar() {
             fontStyle: 'italic',
           }}
         >
-          Small fixes. Better days. ♡
+          Small fixes. Better days.
         </Typography>
       </Box>
     </Box>

@@ -10,6 +10,7 @@ import MyTasksPage from './pages/MyTasksPage';
 import TeamPage from './pages/TeamPage';
 import ReportsPage from './pages/ReportsPage';
 import SettingsPage from './pages/SettingsPage';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   return (
@@ -19,7 +20,10 @@ function App() {
         <Route path="/login" element={<SignInPage />} />
       </Route>
 
-      {/* Dashboard */}
+      {/* Dashboard routes.
+          Authentication guards and role-based route restrictions
+          will be introduced during the authentication phase.
+          These routes are currently accessible for frontend development. */}
       <Route path="/" element={<DashboardLayout />}>
         <Route index element={<OverviewPage />} />
         <Route path="tickets" element={<TicketsPage />} />
@@ -27,6 +31,7 @@ function App() {
         <Route path="team" element={<TeamPage />} />
         <Route path="reports" element={<ReportsPage />} />
         <Route path="settings" element={<SettingsPage />} />
+        <Route path="profile" element={<ProfilePage />} />
       </Route>
 
       {/* Fallback */}
